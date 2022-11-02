@@ -1,29 +1,50 @@
-import './App.css';
-import "./Card.jsx"
-import {animals} from "./animals.js"
-import React, {Component} from "react";
-import Card from './Card.jsx';
+import "./App.css";
+import "./Card.jsx";
+import { animals } from "./animals.js";
+import React, { Component } from "react";
+import Card from "./Card.jsx";
 
 class App extends Component {
-  state={
+  state = {
     animals: animals,
-  }
+  };
 
-  addLike = (e) =>{
-    console.log(e)
-    this.setState({})
-  }
+  addLike = (clickedName, numOflikes) => {
+    this.setState((state) => {
+      const updatedArray = state.animals.map((animal) => {
+        if (animal.name === clickedName) {
+          return { ...animal, likes: animal.likes + 1 };
+        } else {
+          return animal;
+        }
+      });
+      return {
+        animals: updatedArray,
+      };
+    });
+  };
 
-  render(){
-    const animalsList = animals.map((animal) => {
-      return <Card key={animal.name} name={animal.name} likes={animal.likes} click={this.addLike}/>
-    })
-    
+  deleteCard = (clickedName) => {
+    const updatedArray = this.state.animals.filter(
+      (animal) => animal.name !== clickedName
+    );
+    this.setState({ animals: updatedArray });
+  };
 
-    return <div className='row'>
-      {animalsList}
-      </div>
-    
+  render() {
+    const animalsList = this.state.animals.map((animal) => {
+      return (
+        <Card
+          key={animal.name}
+          name={animal.name}
+          likes={animal.likes}
+          addLike={this.addLike}
+          deleteCard={this.deleteCard}
+        />
+      );
+    });
+
+    return <div className="row">{animalsList}</div>;
   }
 }
 
