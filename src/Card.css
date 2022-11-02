@@ -1,6 +1,5 @@
 .card-wrap{
     border: 3px  solid  rgba(44, 187, 99, 0.425);
-    background-color: rgba(44, 187, 99, 0.403);
     border-radius: 20px;
     background:  rgba(44, 187, 99, 0.098);
     display: flex;
@@ -13,11 +12,15 @@
     padding: 1em;
 
 }
+h2{
+   font-size: 17px;
+   
+}
 .remove{
     border-radius: 30px;
     width: 16%;
     border: 0px;
-    margin-left: 115px;
+    margin-left: 119px;
     background-color: rgba(44, 187, 99, 0.955);
 }
 .card-info{
@@ -30,9 +33,14 @@ img{
     border-radius: 20px;
     
 }
+.likes{
+    max-width: 10%;
+    max-height: 10%;
+}
 button{
     margin-left: 5em;
     border-radius: 30px;
     border: 1px solid black;
     background-color: rgba(44, 187, 99, 0.334);
+    position: static;
 }

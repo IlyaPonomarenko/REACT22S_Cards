@@ -7,9 +7,10 @@ import Card from "./Card.jsx";
 class App extends Component {
   state = {
     animals: animals,
+    searchValue: "",
   };
 
-  addLike = (clickedName, numOflikes) => {
+  addLike = (clickedName) => {
     this.setState((state) => {
       const updatedArray = state.animals.map((animal) => {
         if (animal.name === clickedName) {
@@ -31,8 +32,15 @@ class App extends Component {
     this.setState({ animals: updatedArray });
   };
 
+  search = (e) =>{
+    this.setState({searchValue: e.target.value})
+  }
+
   render() {
-    const animalsList = this.state.animals.map((animal) => {
+    const animalFilter = this.state.animals.filter((animal) => {
+      return animal.name.includes(this.state.searchValue)
+    })
+    const animalsList = animalFilter.map((animal) => {
       return (
         <Card
           key={animal.name}
@@ -44,7 +52,11 @@ class App extends Component {
       );
     });
 
-    return <div className="row">{animalsList}</div>;
+    return <div className="App">
+      <h2>{this.state.animals.length} Animals</h2>
+    <input onChange={this.search} stype="text" />
+    <div className="row">{animalsList}</div>
+    </div>;
   }
 }
 
