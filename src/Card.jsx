@@ -8,8 +8,8 @@ const Card = (props) =>{
         <h2>{props.name}</h2>
         <div className="card-info">
             <div className="likes">♥{props.likes}</div>
-            <button onClick={props.addLike.bind(this, props.name, props.likes)}>Like</button>
-            
+            <button className="likeBtn" onClick={props.addLike.bind(this, props.name, props.likes)}>Like</button>
+            <button className="disBtn" onClick={props.removeLike.bind(this, props.name, props.likes)}>Dislike</button>
         </div>
     </div>
 }

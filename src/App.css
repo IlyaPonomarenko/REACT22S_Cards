@@ -1,17 +1,22 @@
+.background{
+  
+}
 .App {
   margin-top: 1em;
   justify-content: center;
   text-align: center;
- 
 }
 input{
   margin-bottom: 1em;
-  border: 1px solid black;
-  border-radius: 15px;
+  border: 1.5px solid rgba(44, 187, 99, 0.704);
+  font-size: 20px;
+  line-height: 40px;
+  border-radius: 20px;
+  text-align: center;
 }
 .row{
   display: grid;
-    grid-template-columns: 180px 180px 180px 180px 180px 180px;
+    grid-template-columns: 200px 200px 200px 200px;
     justify-content: center;
     margin-bottom: 8px;
 }

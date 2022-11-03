@@ -25,6 +25,21 @@ class App extends Component {
     });
   };
 
+  removeLike = (clickedName) => {
+    this.setState((state) => {
+      const updatedArray = state.animals.map((animal) => {
+        if (animal.name === clickedName) {
+          return { ...animal, likes: animal.likes - 1 };
+        } else {
+          return animal;
+        }
+      });
+      return {
+        animals: updatedArray,
+      };
+    });
+  };
+
   deleteCard = (clickedName) => {
     const updatedArray = this.state.animals.filter(
       (animal) => animal.name !== clickedName
@@ -48,14 +63,17 @@ class App extends Component {
           likes={animal.likes}
           addLike={this.addLike}
           deleteCard={this.deleteCard}
+          removeLike={this.removeLike}
         />
       );
     });
 
-    return <div className="App">
-      <h2>{this.state.animals.length} Animals</h2>
+    return <div className="background">
+    <div className="App">
+    <h1>{this.state.animals.length} Animals</h1>
     <input onChange={this.search} stype="text" />
     <div className="row">{animalsList}</div>
+    </div>
     </div>;
   }
 }
