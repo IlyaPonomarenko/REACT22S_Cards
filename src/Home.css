@@ -1,0 +1,16 @@
+.img-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  
+}
+.img-wrap{
+    margin: 1em;
+    justify-content: center;
+}
+img{
+    height: auto; 
+    width: auto; 
+    max-width: 538px;
+    max-height: 400px;
+}
