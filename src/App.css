@@ -21,7 +21,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  background:  rgba(44, 187, 99, 0.098);
+  padding: 20px;
+  font-size: 18px;
 }
 nav{
   margin: auto;
