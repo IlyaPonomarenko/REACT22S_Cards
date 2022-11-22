@@ -1,10 +1,9 @@
-
 .App {
   margin-top: 1em;
   justify-content: center;
   text-align: center;
 }
-input{
+input {
   margin-bottom: 1em;
   border: 1.5px solid rgba(44, 187, 99, 0.704);
   font-size: 20px;
@@ -12,9 +11,32 @@ input{
   border-radius: 20px;
   text-align: center;
 }
-.row{
+.row {
   display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    justify-content: center;
-    margin-bottom: 8px;
+  grid-template-columns: 200px 200px 200px 200px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+nav{
+  margin: auto;
+}
+.nav__links {
+  list-style: none;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+ul{
+  padding-left: 0px;
+}
+.nav__links li a {
+  transition: all 0.3s ease 0s;
 }
